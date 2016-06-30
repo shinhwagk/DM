@@ -15,16 +15,17 @@ table user source configure
   "load_type_info1" :{"schema":"type","table":"table"} ,
   "load_type_info2" :{"sql":""}
 }
+```
 table user target configure
 ```json
 {
   "id" :1,
   "db_id":1,
   "auto_create_table_from_source_ddl?":true,
-  "schema","aaaa",
-  "table","fff"
+  "schema":"aaaa",
+  "table":"fff"
 }
-
+```
 scheander id
 ```sql
 id id
