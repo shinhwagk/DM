@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-sm" type="submit" data-disable-with="Creating file…">Create new task</button>
+      <table class="table">
+        <tr *ngFor="let n of HEROES">
+          <td>{{ n.id }}</td>
+          <td>{{ n.type }}</td>
+          <td>{{ n.source }}</td>
+          <td>{{ n.s_schema }}</td>
+          <td>{{ n.s_table }}</td>
+          <td>{{ n.target }}</td>
+          <td>{{ n.t_scehma }}</td>
+          <td>{{ n.t_table }}</td>
+          <td>运行中..</td>
+          <td>
+            <progress class="progress" value="75" max="100">75%</progress>
+          </td>
+          <td>delete</td>
+          <td>暂停</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
