@@ -43,7 +43,7 @@
 
 #### test data
 ```sql
-insert into dm values(
+insert into tasks values(
   '{}'
 )
 ```
