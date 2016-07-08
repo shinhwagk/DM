@@ -1,4 +1,11 @@
-//oracle
+
+```sql
+create table database(
+  data json,
+  id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL not null
+)
+```
+```json
 {
   "id": 1,
   "type":"oracle",
@@ -8,7 +15,8 @@
   "username": "fff",
   "password": "ccc"
 }
-
+```
+```json
 {
   "id": 2,
   "type":"mysql",
@@ -18,3 +26,4 @@
   "username": "fff",
   "password": "ccc"
 }
+```
