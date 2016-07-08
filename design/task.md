@@ -34,10 +34,11 @@
 ```
 #### statue
 ```text
-1 : task create success
-2 : task check
-3 : runing
-4 : exec success
+1 : task create unfinished
+2 : task create finished
+3 : task check
+4 : runing
+5 : exec success
 0 : exec faile
 ```
 
