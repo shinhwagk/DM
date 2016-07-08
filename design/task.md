@@ -13,7 +13,7 @@
       "type": "sql | table",
       "info": {
         "schema": "fff",
-        "table": "sxxx" <!-- "sqltext":"aaa" -->
+        <!--"table": "sxxx" <!-- "sqltext":"aaa" -->-->
       }
     }
   },
