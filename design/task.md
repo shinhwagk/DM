@@ -34,7 +34,7 @@
 ```
 #### statue
 ```text
-1 :task create sucees
+1 : task create sucees
 2 : task check
 3 : runing
 4 : exec success
