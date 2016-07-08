@@ -9,7 +9,7 @@
       "name": "fun1",
       "user": "system"
     },
-    "out": { //"type":"table","schema","pst"
+    "out": {
       "type": "sql | table",
       "info": {
         "schema": "fff",
