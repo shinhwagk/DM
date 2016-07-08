@@ -1,7 +1,7 @@
 ```json
 {
   "id": 11,
-  "type": "inc|once|update|merge|insert|delete",
+  "type": "inc|once|batch update|merge|insert|delete",
   "statue": "等待被执行|执行中|执行完毕|执行错误",
   "source": {
     "db": {
@@ -31,4 +31,19 @@
     }
   }
 }
+```
+#### statue
+```text
+0:task create sucees
+1 :task check
+2 : runing
+3 : exec success
+-1: exec faile
+```
+
+#### test data
+```sql
+insert into dm values(
+  '{}'
+)
 ```
