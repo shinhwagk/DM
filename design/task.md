@@ -1,3 +1,4 @@
+```json
 {
   "id": 11,
   "type": "inc", //inc|once|update|merge|insert|delete
@@ -30,3 +31,4 @@
     }
   }
 }
+```
