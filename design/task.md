@@ -1,7 +1,7 @@
 ```json
 {
   "id": 11,
-  "type": "inc", //inc|once|update|merge|insert|delete
+  "type": "inc|once|update|merge|insert|delete",
   "statue": "等待被执行|执行中|执行完毕|执行错误",
   "source": {
     "db": {
@@ -13,7 +13,7 @@
       "type": "sql | table",
       "info": {
         "schema": "fff",
-        "table": "sxxx" // "sqltext":"aaa"
+        "table": "sxxx" <!-- "sqltext":"aaa" -->
       }
     }
   },
