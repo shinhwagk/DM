@@ -1,10 +1,11 @@
-
+### 表
 ```sql
 create table database(
   data json,
   id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL not null
 );
 ```
+### 例子
 ```json
 {
   "id": 1,
