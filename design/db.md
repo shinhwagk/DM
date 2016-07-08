@@ -3,7 +3,7 @@
 create table database(
   data json,
   id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL not null
-)
+);
 ```
 ```json
 {
