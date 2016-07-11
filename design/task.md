@@ -1,3 +1,9 @@
+```sql
+create table task(
+  data json,
+  id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL not null
+);
+```
 ```json
 {
   "id": 11,
