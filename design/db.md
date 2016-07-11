@@ -2,13 +2,13 @@
 ```sql
 create table database(
   data json,
-  id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL not null
+  id text GENERATED ALWAYS AS (data -> '$.alias') VIRTUAL not null
 );
 ```
 ### 例子
 ```json
 {
-  "id": 1,
+  "alias": "fun",
   "type":"oracle",
   "ip": "aaa",
   "port": 111,
@@ -19,7 +19,7 @@ create table database(
 ```
 ```json
 {
-  "id": 2,
+  "alias": 2,
   "type":"mysql",
   "ip": "aaa",
   "port": 111,
