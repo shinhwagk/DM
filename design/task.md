@@ -1,7 +1,7 @@
 ```sql
 create table task(
   data json,
-  id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL not null
+  id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL unique not null
 );
 ```
 ```json
