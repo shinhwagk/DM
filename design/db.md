@@ -1,8 +1,8 @@
 ### 表
 ```sql
-create table database(
+create table db(
   data json,
-  id text GENERATED ALWAYS AS (data -> '$.alias') VIRTUAL not null
+  alias varchar(10) GENERATED ALWAYS AS (data -> '$.alias') VIRTUAL not null
 );
 ```
 ### 例子
