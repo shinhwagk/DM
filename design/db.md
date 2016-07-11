@@ -2,7 +2,7 @@
 ```sql
 create table db(
   data json,
-  alias varchar(10) GENERATED ALWAYS AS (data -> '$.alias') VIRTUAL not null
+  alias varchar(10) GENERATED ALWAYS AS (data -> '$.alias') VIRTUAL unique not null
 );
 ```
 ### 例子
