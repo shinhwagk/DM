@@ -1,0 +1,10 @@
+table {
+    font-size: 13px;
+    font-family: Consolas;
+}
+
+td, th {
+    padding: 4px 10px 0px 10px;
+    vertical-align: middle;
+    text-align: center;
+}

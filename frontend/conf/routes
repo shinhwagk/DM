@@ -1,0 +1,11 @@
+GET /  controllers.Application.index
+
+GET /api/tasks controllers.Application.tasks
+
+POST /api/task/source/:id controllers.Application.setSourceOfTask(id:Int)
+POST /api/task/target/:id controllers.Application.setTargetOfTask(id:Int)
+
+GET /api/task/source/:id/columns controllers.Application.getSourceColumnsOfTask(id:Int)
+GET /api/task/target/:id/columns controllers.Application.getTargetColumnsOfTask(id:Int)
+
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

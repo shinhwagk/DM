@@ -1,0 +1,38 @@
+<table class="table table-hover">
+    <tr>
+        <th width="2%">Number</th>
+        <th>Source</th>
+        <th width="1%"></th>
+        <th>Type</th>
+        <th width="1%"></th>
+        <th>Target</th>
+        <th>state</th>
+        <th>Runing progress</th>
+        <th>Option</th>
+        <th>Option</th>
+    </tr>
+    <tr *ngFor="let n of HEROES">
+        <td>{{ n.id }}</td>
+        <td>{{n.s_schema}}/{{n.s_schema}}.{{n.s_table}}</td>
+        <td><i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i></td>
+        <td> {{ n.type }}</td>
+        <td><i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i></td>
+        <td>{{n.target}}/{{n.t_schema}}.{{n.t_table}}</td>
+        <td>
+            <i class="fa fa-refresh fa-spin fa-lg"></i>
+            <span class="sr-only">运行中...</span>运行中...
+        </td>
+        <td width="30%">
+            <progress class="progress progress-striped" value="{{n.min1}}" max="100">75%
+                <span class="sr-only">60% Complete</span>
+                <span class="progress-type">HTML / HTML5</span>
+            </progress>
+        </td>
+        <td>delete</td>
+        <td>
+            <a href="sss"><i class="fa fa-play" aria-hidden="true"></i></a>
+            <a href="sss"><i class="fa fa-pause" aria-hidden="true"></i></a>
+            <a href="sss"><i class="fa fa-stop" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,66 @@
+<!--Source Configure-->
+<div class="card">
+    <div class="card-header">
+        <h5>Source Configure</h5>
+    </div>
+    <div class="card-block">
+        <fieldset class="form-group">
+            <label for="sourceDbNumber">Source Db</label>
+            <select class="form-control" id="sourceDbNumber">
+                <option></option>
+                <option value="1">fun</option>
+                <option value="2">fun2</option>
+            </select>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="sqlText">SQL TEXT</label>
+            <textarea class="form-control" rows="5" id="sqlText">asdf</textarea>
+        </fieldset>
+        <fieldset class="form-group col-md-offset-5">
+            <button type="button" class="btn btn-secondary btn-sm" (click)="setSourceConfigure()">Source Success</button>
+        </fieldset>
+    </div>
+</div>
+
+<!--Target Configure-->
+<div class="card">
+    <div class="card-header">
+        <h5>Target Configure</h5>
+    </div>
+    <div class="card-block">
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="targetDbNumber">Target Db</label>
+                <select class="form-control" id="targetDbNumber">
+                    <option value="1">fun</option>
+                    <option value="2">fun2</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="targetDbSchema">Target Schema</label>
+                <input class="form-control" id="targetDbSchema">
+            </div>
+            <div class="col-sm-4">
+                <label for="targetDbTable">Target Table</label>
+                <input class="form-control" id="targetDbTable">
+            </div>
+        </div>
+        <div class="form-group col-md-offset-5">
+            <button type="button" class="btn btn-secondary btn-sm" (click)="setTargetConfigure()">Target Success</button>
+        </div>
+    </div>
+</div>
+
+<!--migrate configure-->
+<div class="card">
+    <div class="card-header">
+        <h5>Migrate Configure</h5>
+    </div>
+    <div class="card-block">
+        <label for="targetDbTable">Commit Limit</label>
+        <input class="form-control">
+    </div>
+    <div class="form-group col-md-offset-5">
+        <button type="button" class="btn btn-secondary btn-sm" (click)="setMigrateConfigure()">Target Success</button>
+    </div>
+</div>

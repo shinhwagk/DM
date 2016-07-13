@@ -12,8 +12,8 @@ import scala.concurrent.Future
   * Created by zhangxu on 2016/7/8.
   */
 object Database {
-    val dbConfig = DatabaseConfigProvider.get[JdbcProfile](Play.current)
-    val db = dbConfig.db
+  private val dbConfig = DatabaseConfigProvider.get[JdbcProfile](Play.current)
+  private val db = dbConfig.db
 
   def stringToObject(str: String) = Json.parse(str)
 
@@ -25,16 +25,42 @@ object Database {
 
   def rowToJson[T](fr: Future[List[String]]) = fr.map(_.map(Json.parse(_))).map(objectToJson)
 
-  def getExecutableTasks = {
+  def getExecutableTasks =
     db.run(sql"""select * from tasks where data -> '$$.statue' = '1'""".as[String])
+
+  def getUnDeployTask(id: Int) =
+    db.run(sql"""select * from tasks where data -> '$$.statue' = $id""".as[String].head)
+
+  def getTasks =
+    db.run(sql"select * from tasks".as[String])
+
+  def addTask: Future[Int] =
+    db.run(sqlu"""insert into tasks values('{"id":1}')""")
+
+  def updateSourceOfTask(id: Int, json: JsValue) = {
+    db.run(sqlu"update tasks set data where id = $id")
   }
 
-  def getUnDeployTask(id: Int) = {
-    db.run(sql"""select * from tasks where data -> '$$.statue' = $id""".as[String].head)
+  def updateTargetOfTask(id: Int, json: JsValue) =
+    db.run(sqlu"update tasks set data where id = $id")
+
+
+  /**
+    * 可用类型:insert
+    **/
+  def getSourceColumnsOfTask(id: Int) = {
+
+  }
+
+  /**
+    * 可用类型:insert
+    **/
+  def getTargetColumnsOfTask(id: Int) = {
+
   }
 
   //  def main(args: Array[String]) {
-  //    val l: List[String] = List("""{"f":"c"}""","""{"x":"ss"}""")
+  //    val l: List[String] = List({"f":"c"}""","""{"x":"ss"}""")
   //    val l1: Future[List[String]] = Future.successful(l)
   //    //    l1.map(p=>p.map(Json.parse(_))).foreach(println)
   //    rowToJson(l1).foreach { p => println(p) }
