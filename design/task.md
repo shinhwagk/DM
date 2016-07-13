@@ -1,5 +1,5 @@
 ```sql
-create table task(
+create table tasks(
   data json,
   id int GENERATED ALWAYS AS (data -> '$.id') VIRTUAL unique not null
 );
