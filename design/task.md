@@ -8,6 +8,7 @@ create table tasks(
 {
   "id": 11,
   "type": "inc|once|batch update|merge|insert|delete",
+  "step": "aa",
   "statue": "等待被执行|执行中|执行完毕|执行错误",
   "source": {
     "db": {
