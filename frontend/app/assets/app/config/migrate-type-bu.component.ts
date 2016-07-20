@@ -9,8 +9,8 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-dm-edit-type-bu',
-    templateUrl: 'app/template/migrate-type-bu.component.html',
-    styleUrls: ['app/template/migrate-type-bu.component.css']
+    templateUrl: 'app/config/migrate-type-bu.component.html',
+    styleUrls: ['app/config/migrate-type-bu.component.css']
 })
 
 export class MigrateTypeBatchUpdateComponent {

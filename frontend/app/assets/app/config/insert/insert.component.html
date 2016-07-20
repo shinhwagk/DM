@@ -1,0 +1,5 @@
+<app-dm-config-insert-source [_task_id]="_task_id" *ngIf="_source_configuring"
+                             (onSuccess)="setSourceConfigSuccess($event)"></app-dm-config-insert-source>
+<app-dm-config-insert-target [_task_id]="_task_id" *ngIf="_target_configuring"
+                             (onSuccess)="setTargetConfigSuccess($event)"></app-dm-config-insert-target>
+<app-dm-config-insert-match [_insert_config]="_insert_config" *ngIf="_match_configuring"></app-dm-config-insert-match>

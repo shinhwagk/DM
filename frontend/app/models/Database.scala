@@ -5,6 +5,7 @@ import play.api.db.slick.DatabaseConfigProvider
 import play.api.libs.json._
 import slick.driver.JdbcProfile
 import slick.driver.MySQLDriver.api._
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
@@ -37,9 +38,8 @@ object Database {
   def addTask: Future[Int] =
     db.run(sqlu"""insert into tasks values('{"id":1}')""")
 
-  def updateSourceOfTask(id: Int, json: JsValue) = {
+  def updateSourceOfTask(id: Int, json: JsValue) =
     db.run(sqlu"update tasks set data where id = $id")
-  }
 
   def updateTargetOfTask(id: Int, json: JsValue) =
     db.run(sqlu"update tasks set data where id = $id")
@@ -48,24 +48,8 @@ object Database {
   /**
     * 可用类型:insert
     **/
-  def getSourceColumnsOfTask(id: Int) = {
-
-  }
-
-  /**
-    * 可用类型:insert
-    **/
   def getTargetColumnsOfTask(id: Int) = {
-
+    println(id)
   }
 
-  //  def main(args: Array[String]) {
-  //    val l: List[String] = List({"f":"c"}""","""{"x":"ss"}""")
-  //    val l1: Future[List[String]] = Future.successful(l)
-  //    //    l1.map(p=>p.map(Json.parse(_))).foreach(println)
-  //    rowToJson(l1).foreach { p => println(p) }
-  //    while (true) {
-  //      Thread.sleep(10000)
-  //    }
-  //  }
 }

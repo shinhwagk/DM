@@ -1,0 +1,60 @@
+<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#taskModal"> Create new task
+</button>
+
+<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Migrate Configure</h4>
+      </div>
+      <div class="modal-body">
+        <div class="card" [hidden]="template != '0'">
+          <div class="card-header">
+            <h5>migrate type</h5>
+          </div>
+          <div class="card-block">
+            <div class="form-group">
+              <button (click)="chooseTemplate(1)" >batch update</button>
+              <button (click)="chooseTemplate(2)" >once insert</button>
+              <button (click)="chooseTemplate(1)" >batch update</button>
+              <button (click)="chooseTemplate(1)" >batch update</button>
+              <!--<option value="1">batch update</option>-->
+              <!--<option value="2">insert</option>-->
+              <!--<option value="1">full once</option>-->
+              <!--<option value="1">table inc</option>-->
+              <!--<option value="0">table i2nc</option>-->
+              <!--<select class="form-control" multiple (change)="setTemplate($event.target.value)">-->
+                <!--<option value="1">batch update</option>-->
+                <!--<option value="2">insert</option>-->
+                <!--<option value="1">full once</option>-->
+                <!--<option value="1">table inc</option>-->
+                <!--<option value="0">table i2nc</option>-->
+              <!--</select>-->
+            </div>
+          </div>
+        </div>
+        <div [ngSwitch]="template">
+          <div *ngSwitchCase="1">
+            <app-dm-edit-type-bu></app-dm-edit-type-bu>
+          </div>
+          <div *ngSwitchCase="2">
+            <app-dm-config-insert></app-dm-config-insert>
+          </div>
+          <div *ngSwitchDefault></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<form class="form-inline navbar-form pull-right">
+  <input class="form-control" type="text" placeholder="Search">
+  <button class="btn btn-success-outline" type="submit">Search</button>
+</form>

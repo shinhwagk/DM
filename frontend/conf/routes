@@ -5,7 +5,14 @@ GET /api/tasks controllers.Application.tasks
 POST /api/task/source/:id controllers.Application.setSourceOfTask(id:Int)
 POST /api/task/target/:id controllers.Application.setTargetOfTask(id:Int)
 
-GET /api/task/source/:id/columns controllers.Application.getSourceColumnsOfTask(id:Int)
-GET /api/task/target/:id/columns controllers.Application.getTargetColumnsOfTask(id:Int)
+POST /api/task/source/:id/columns controllers.Application.getSourceColumnsByTaskId(id:Int)
+POST /api/task/target/:id/columns controllers.Application.getTargetColumnsByTaskId(id:Int)
+POST /api/task/insert/run controllers.Application.insertRun
+
+
 
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+#test
+GET     /pingWs                     controllers.Application.socket

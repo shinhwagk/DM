@@ -3,6 +3,7 @@ import {disableDeprecatedForms, provideForms} from '@angular/forms';
 import {HTTP_PROVIDERS} from '@angular/http';
 import 'rxjs/Rx';
 
+// / <reference path="jquery.d.ts"/>
 import {AppComponent} from './app.component';
 
 bootstrap(AppComponent, [

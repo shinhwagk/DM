@@ -1,0 +1,59 @@
+<form>
+  <div class="form-group row">
+    <div class="card">
+      <div class="card-header">
+        <h5>Columns Match Configure</h5>
+      </div>
+      <div class="card-block">
+        <div class="col-sm-6">
+          <div class="radio">
+            <label><input type="radio" name="source1"> Auto Macth</label>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="radio">
+            <label><input type="radio" name="source1"> Manul Macth</label>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <h5>Source Column <span class="label label-default">refresh</span></h5>
+          <table class="table table-sm">
+            <tr *ngFor="let sci of _source_columns_info; let i = index">
+              <td [class.match]="judgeLocked(i)">{{ i }}. {{ sci[0] }} ({{ sci[1] }})</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-sm-6">
+          <h5>Target Column <span class="label label-default">refresh</span></h5>
+          <table class="table table-sm">
+            <tr *ngFor="let tci of _target_columns_info; let i = index">
+              <td [class.match]="judgeLocked(i)">{{ i }}. {{ tci[0] }} ( {{ tci[1] }} )</td>
+              <td>
+                <a style="cursor:hand" (click)="source_column_up(i)">
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </a>
+              </td>
+              <td>
+                <a style="cursor:hand" (click)="source_column_down(i)">
+                  <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                </a>
+              </td>
+              <td>
+                <a [hidden]="judgeLocked(i)" style="cursor:hand" (click)="lockCol(i)">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                </a>
+                <a [hidden]="!judgeLocked(i)" style="cursor:hand" (click)="unLockCol(i)">
+                  <i class="fa fa-unlock" aria-hidden="true"></i>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pull-right">
+    <button *ngIf="_target_columns_info" type="button" class="btn btn-secondary" (click)="run()">Running</button>
+    <!--<button *ngIf="_target_columns_info" type="button" class="btn btn-secondary">Save Configure</button>-->
+  </div>
+</form>

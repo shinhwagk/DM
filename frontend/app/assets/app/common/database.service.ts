@@ -4,6 +4,8 @@
 import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 
+import {_conf_insert} from "../config/insert/insert.service";
+
 @Injectable()
 export class DatabaseService {
   constructor(private _http:Http) {
@@ -17,12 +19,12 @@ export class DatabaseService {
     // return this._http.get(`/api/common/sqlcolumns/table/${db}/${schema}/${table}`).map((res:Response) => res.json())
   }
 
-  getSourceColumnsByTask(num) {
-    return this._http.get(`/api/task/source/${num}/columns`).map((res:Response) => res.json())
+  getSourceColumnsByTaskId(_config:_conf_insert) {
+    return this._http.post(`/api/task/source/${_config.id}/columns`, JSON.stringify(_config.source)).map((res:Response) => res.json())
   }
 
-  getTargetColumnsByTask(num) {
-    return this._http.get(`/api/task/target/${num}/columns`).map((res:Response) => res.json())
+  getTargetColumnsByTaskId(_config:_conf_insert) {
+    return this._http.post(`/api/task/target/${_config.id}/columns`, JSON.stringify(_config.target)).map((res:Response) => res.json())
   }
 
   setSourceOfTask(obj, num) {
@@ -32,4 +34,9 @@ export class DatabaseService {
   setTargetOfTask(obj, num) {
     return this._http.post(`/api/task/target/${num}`, JSON.stringify(obj)).map((res:Response) => res.text())
   }
+
+  insertRun(obj){
+    return this._http.post(`/api/task/insert/run`, JSON.stringify(obj)).map((res:Response) => res.text())
+  }
+
 }
